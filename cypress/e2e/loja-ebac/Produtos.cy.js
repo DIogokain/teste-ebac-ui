@@ -1,4 +1,4 @@
-/// <reference types="cypress" />
+
 
 describe('Funcionalidades: Produtos', () => {
     beforeEach(() => {

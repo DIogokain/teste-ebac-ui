@@ -1,5 +1,6 @@
 /// <reference types="cypress" />
 
+const { da } = require('@faker-js/faker');
 const perfil = require('../../fixtures/Perfil.json')
 
 describe('funcionalidade: login', () => {
@@ -50,4 +51,9 @@ describe('funcionalidade: login', () => {
 
 
       })   
+it.only('Deve fazer login com sucesso - Usando comando customizado', () => {
+        cy.Arquivo("fabianodiogo8545@gmail.com", "Ambipom85#")
+          cy.get('.page-title').should('contain', 'Minha conta') // ou outro texto esperado
 })
+
+      })

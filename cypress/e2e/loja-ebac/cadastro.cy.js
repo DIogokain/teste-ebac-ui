@@ -4,7 +4,7 @@ import { fa, faker } from '@faker-js/faker';
 describe('Funcionalidade: cadastro', () => {
 
     beforeEach(() => {
-        cy.visit('http://lojaebac.ebaconline.art.br/minha-conta/')
+        cy.visit('minha-conta/')
     });
     
       it('Deve completar o cadastro com sucesso', () => {
@@ -39,3 +39,7 @@ describe('Funcionalidade: cadastro', () => {
 
 
 });
+it.only('Deve completar o cadastro com sucesso - comando customizado', () => {
+  cy.Precadastro(faker.internet.email(), '85450392@', faker.person.firstName(), faker.person.lastName)
+cy.get('.woocommerce-message').should('contain', 'Detalhes da conta modificados com sucesso')
+})
